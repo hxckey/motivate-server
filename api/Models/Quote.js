@@ -4,7 +4,7 @@ const { ObjectId } = require('mongodb')
 class Quote {
     constructor(data){
         this.id = data.id
-        this.quote = data.qotew
+        this.quote = data.quote
         this.author = data.author
     }
 
@@ -51,4 +51,4 @@ class Quote {
 
 };
 
-module.exports = Dog;
+module.exports = Quote;
