@@ -12,12 +12,25 @@ class Quote {
         return new Promise (async (resolve, reject) => {
             try {
                 const db = await init()
-                const quotesData = await db.collection('quotes').find().toArray()
+                const quotesData = await db.quotes.find().toArray()
                 const quotes = quotesData.map(q => new Quote({ ...q, id: q._id }))
                 resolve(quotes);
             } catch (err) {
                 console.log(err);
                 reject("Error retrieving quotations.")
+            }
+        })
+    }
+
+    static findRandom() {
+        return new Promise (async (resolve, reject) => {
+            try {
+                const db = await init()
+                const randomQuoteData = await db.collection('quotes').aggregate([{$sample: {size: 1}}]).toArray()
+                const quote = new Quote({...randomQuoteData[0], id: randomQuoteData[0]._id});
+                resolve (quote);
+            } catch(err) {
+                reject('Sorry! Couldn\'t find anything!');
             }
         })
     }

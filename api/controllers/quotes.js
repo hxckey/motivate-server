@@ -23,6 +23,16 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+// quotes retrieve random
+router.get('/random', async (req, res) => {
+    try {
+        const randomQuote = await Quote.findRandom
+        res.json({randomQuote})
+    } catch(err) {
+        res.status(404).json({err})
+    }
+})
+
 // IMPLEMENT CREATE QUOTE FUNCTIONALITY LATER STAGE
 // router.post('/', async (req, res) => {
 //     try {

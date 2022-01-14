@@ -4,7 +4,7 @@ db.quotes.drop()
 
 db.quotes.insertMany([
     {quote: "The best time to plant a tree was 20 years ago, the second best time is now.", author: "Chinese Proverb"},
-    {quote: "The secret of getting ahead is gettin started.", author: "Mark Twain"},
+    {quote: "The secret of getting ahead is getting started.", author: "Mark Twain"},
     {quote: "Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.", author: "Rumi"},
     {quote: "Everything you can imagine is real.", author: "Pablo Picasso"},
     {quote: "Impossible is just an opinion.", author: "Paul Coelho"},
